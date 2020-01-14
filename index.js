@@ -116,7 +116,8 @@ function decimalButton(buttonId) {
   } else if (
     number1 != "&nbsp;" &&
     operator != "" &&
-    number2.includes(".") == false
+    number2.includes(".") == false &&
+    output == "&nbsp;"
   ) {
     if (array2.includes(".")) {
       // array2 = array2.filter(e => e !== ".");
