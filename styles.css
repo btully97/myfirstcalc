@@ -1,0 +1,47 @@
+.numberButtons h1 {
+  color: #ffffff;
+  text-align: right;
+  padding-right: 24px;
+  font-family: Segoe UI Light;
+  font-size: 40px;
+}
+
+.numberButtons {
+  background-color: #1e1e1e;
+  width: 284px;
+  padding: 24px;
+  border-radius: 50px;
+}
+
+.numberButtons button {
+  color: #ffffff;
+  background-color: #333333;
+  text-align: center;
+  height: 66px;
+  width: 66px;
+  border-radius: 50%;
+}
+
+.operatorStyle {
+  background-color: #eb7611;
+}
+
+#history-value1,
+#history-value2,
+#history-operator {
+  color: #e3e3e3;
+  text-align: right;
+  padding-right: 24px;
+}
+
+#history-operator {
+  margin: 0;
+  display: inline;
+}
+
+#output-value {
+  color: #ffffff;
+  font-size: 16pt;
+  text-align: right;
+  padding-right: 24px;
+}
