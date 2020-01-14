@@ -138,3 +138,4 @@ function decimalButton(buttonId) {
     document.getElementById("history-value1").innerHTML = array1.join("");
   }
 }
+ 
