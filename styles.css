@@ -6,6 +6,17 @@
   font-size: 40px;
 }
 
+#myCalc {
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  min-height: 500px;
+}
+
 .numberButtons {
   background-color: #1e1e1e;
   width: 284px;
