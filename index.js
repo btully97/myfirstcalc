@@ -19,6 +19,16 @@ function numberClick(buttonId) {
   ) {
     array2.push(buttonId);
     document.getElementById("history-value2").innerHTML = array2.join("");
+  } else if (
+    number1 != "&nbsp;" &&
+    operator != "" &&
+    number2 != "" &&
+    output != "&nbsp;"
+  ) {
+    var newNumber = buttonId;
+    clearButton();
+    array1.push(newNumber);
+    document.getElementById("history-value1").innerHTML = array1.join("");
   } else if (document.getElementById("history-operator").innerText == "") {
     array1.push(buttonId);
     document.getElementById("history-value1").innerHTML = array1.join("");
@@ -43,7 +53,7 @@ function operatorClick(operatorId) {
     var newOperator = operatorId;
     var newHistory = eval(history);
     clearButton();
-    document.getElementById("output-value").innerHTML = newHistory;
+    document.getElementById("output-value").innerHTML = "&nbsp;";
     document.getElementById("history-value1").innerHTML = newHistory;
     document.getElementById("history-operator").innerHTML = newOperator;
   }
@@ -93,6 +103,7 @@ function decimalButton(buttonId) {
   var number1 = document.getElementById("history-value1").innerHTML;
   var number2 = document.getElementById("history-value2").innerHTML;
   var operator = document.getElementById("history-operator").innerHTML;
+  var output = document.getElementById("output-value").innerHTML;
   if (number2 == "" && operator == "") {
     if (array1.includes(".")) {
       // array1 = array1.filter(e => e !== ".");
@@ -102,7 +113,13 @@ function decimalButton(buttonId) {
       array1.push(".");
       document.getElementById("history-value1").innerHTML = array1.join("");
     }
-  } else if (number1 != "&nbsp;" && operator != "") {
+  } else if (
+    (number1 != "&nbsp;" && operator != "" && number2.includes(".") == false) ||
+    (number1 != "&nbsp;" &&
+      operator != "" &&
+      number2 == "" &&
+      output != "&nbsp;")
+  ) {
     if (array2.includes(".")) {
       // array2 = array2.filter(e => e !== ".");
       // document.getElementById("history-value2").innerHTML = array2.join("");
@@ -110,5 +127,15 @@ function decimalButton(buttonId) {
       array2.push(".");
       document.getElementById("history-value2").innerHTML = array2.join("");
     }
+  } else if (
+    number1 != "&nbsp;" &&
+    operator != "" &&
+    number2 != "" &&
+    output != "&nbsp;"
+  ) {
+    var newNumber = buttonId;
+    clearButton();
+    array1.push(newNumber);
+    document.getElementById("history-value1").innerHTML = array1.join("");
   }
 }
