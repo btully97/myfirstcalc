@@ -114,11 +114,9 @@ function decimalButton(buttonId) {
       document.getElementById("history-value1").innerHTML = array1.join("");
     }
   } else if (
-    (number1 != "&nbsp;" && operator != "" && number2.includes(".") == false) ||
-    (number1 != "&nbsp;" &&
-      operator != "" &&
-      number2 == "" &&
-      output != "&nbsp;")
+    number1 != "&nbsp;" &&
+    operator != "" &&
+    number2.includes(".") == false
   ) {
     if (array2.includes(".")) {
       // array2 = array2.filter(e => e !== ".");
