@@ -1,6 +1,10 @@
 var array1 = [""];
 var array2 = [""];
 
+if (array1.join("") !== "") {
+  console.log("hello");
+}
+
 function numberClick(buttonId) {
   var output = document.getElementById("output-value").innerHTML;
   var number1 = document.getElementById("history-value1").innerHTML;
@@ -80,6 +84,7 @@ function positiveNegative() {
   var number1 = document.getElementById("history-value1").innerHTML;
   var number2 = document.getElementById("history-value2").innerHTML;
   var operator = document.getElementById("history-operator").innerHTML;
+  var output = document.getElementById("output-value").innerHTML;
   if (operator == "") {
     if (number1 > 0) {
       array1[0] = "-";
@@ -88,7 +93,7 @@ function positiveNegative() {
       array1[0] = "";
       document.getElementById("history-value1").innerHTML = array1.join("");
     }
-  } else {
+  } else if (operator != "" && output == "&nbsp;") {
     if (number2 > 0) {
       array2[0] = "-";
       document.getElementById("history-value2").innerHTML = array2.join("");
@@ -96,6 +101,17 @@ function positiveNegative() {
       array2[0] = "";
       document.getElementById("history-value2").innerHTML = array2.join("");
     }
+  } else if (
+    number1 != "&nbsp;" &&
+    operator != "" &&
+    number2 != "" &&
+    output != "&nbsp;"
+  ) {
+    var newNumber1 = output;
+    clearButton();
+    array1.push(newNumber1);
+    document.getElementById("history-value1").innerHTML = array1.join("");
+    positiveNegative();
   }
 }
 
@@ -138,4 +154,3 @@ function decimalButton(buttonId) {
     document.getElementById("history-value1").innerHTML = array1.join("");
   }
 }
- 
